@@ -12,10 +12,10 @@ export class HomePage {
   opcao : string
   resultado : string
   mensagem : string
-  imagem : any
+  imagem : any = "assets/icon/favicon.png"
 
   constructor() {}
-
+  
   calcIMC(){
     
     var altura = parseFloat(this.altura)
@@ -26,13 +26,14 @@ export class HomePage {
     if(opcao == "f"){
       resultado = peso / altura**2
       this.resultado = resultado.toFixed(1)
+      
       if(resultado <= 19){
         this.mensagem = "ABAIXO DO PESO"
-        this.imagem = ""        
+        this.imagem = "assets/icon/favicon.png"        
       }
       else if (resultado > 19 && resultado <= 27.3){
         this.mensagem = "PESO NORMAL"
-        this.imagem = ""
+        this.imagem = "assets/icon/favicon.png"
       }
       else{
         this.mensagem = "ACIMA DO PESO"
@@ -40,16 +41,18 @@ export class HomePage {
       }
 
     }
+    
     else if (opcao == "m"){
       resultado = peso / altura**2
       this.resultado = resultado.toFixed(1)
+      
       if(resultado <=20.7){
         this.mensagem = "ABAIXO DO PESO"
-        this.imagem = ""
+        this.imagem = "assets/icon/favicon.png"
       }
       else if(resultado > 20.7 && resultado <=27.8){
         this.mensagem = "PESO NORMAL"
-        this.imagem = ""
+        this.imagem = "assets/icon/favicon.png"
       }
       else{
         this.mensagem = "ACIMA DO PESO"
@@ -59,7 +62,7 @@ export class HomePage {
     }
     else if(opcao == null) {
       this.mensagem = "Escolha o sexo"
-      this.imagem = ""
+      this.imagem = "assets/icon/favicon.png"
     }
   }
 
